@@ -33,7 +33,7 @@ python ./data/image_compress.py
 
 We provide the other necessary pre-processed data for the five subsets as `/data/*.zip`. Extract them to `./data/` before usage.
 
-They can also be generated from raw data through :
+They can also be generated from the raw data through :
 
 ```
 python ./data/qa_formalize.py

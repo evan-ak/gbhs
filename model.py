@@ -341,9 +341,11 @@ class ModuleFindSameColor(torch.nn.Module) :
     assert len(x) == len(w["objects"])
     y = []
     for i in range(len(x)) :
-      if len(x[i]) <= 0 :
-        w["failed"].append(i)
       if i in w["failed"] :
+        y.append(None)
+        continue
+      if not type(x[i]) in (tuple, list) or len(x[i]) <= 0 :
+        w["failed"].append(i)
         y.append(None)
         continue
       if type(x[i][0]) in (tuple, list) :
